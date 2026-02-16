@@ -7,15 +7,25 @@
     "start": "node src/index.js",
     "dev": "nodemon src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
-    
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^5.2.1"
+    "cors": "^2.8.6",
+    "dotenv": "^17.2.3",
+    "express": "^5.2.1",
+    "express-validator": "^7.3.1"
   },
   "devDependencies": {
     "nodemon": "^3.1.11"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/areesh-ahmed/blogify-api.git"
+  },
+  "bugs": {
+    "url": "https://github.com/areesh-ahmed/blogify-api/issues"
+  },
+  "homepage": "https://github.com/areesh-ahmed/blogify-api#readme"
 }
