@@ -1,17 +1,17 @@
-// src/controllers/users.controller.js
+const {validateUserData} = require('express-validator');  
 
-const getSingleUser = (req, res) => {
-  // Express puts all URL parameters into the `req.params` object.
-  // The property name matches the parameter name from our route definition.
-  const requestedUserId = req.params.userId;
+const registerUser = (req, res) => {
+  const errors = validateUserData(req.body);
 
-  // Now we have the ID! We can use it to fetch the user from a database.
-  // For now, let's just send it back to confirm we got it.
-  res.status(200).json({
-    message: `You requested data for User ID: ${requestedUserId}`
-  });
-};
+  if(!errors.isEmpty()) {
+    return res.status(400).json({errors: errors.array()});
+  }
+
+  const {email, password} = req.body;
+
+  res.status(201).json({message: `User registered with email: ${email}`});
+}
 
 module.exports = {
-  getSingleUser,
+  registerUser
 };
